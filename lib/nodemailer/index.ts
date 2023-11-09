@@ -81,23 +81,18 @@ export async function generateEmailBody(
 }
 
 const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
   service: "gmail",
   auth: {
-    type: "OAuth2",
     user: "varungarg63683@gmail.com",
-    accessToken: process.env.accessToken,
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    refreshToken: process.env.REFRESH_TOKEN,
-  },
-  tls: {
-    rejectUnauthorized: false,
+    pass: "qolh kayo rrhy upyv",
   },
 });
-export async function sendEmail(emailContent: EmailContent, sendTo: String[]) {
+export async function sendEmail(emailContent: EmailContent, sendTo: string) {
   const mailOptions = {
-    from: '"PriceWise" <cgarg2416@gmail.com>',
-    to: "sendTo",
+    from: '"PriceWise" <varungarg63683@gmail.com>',
+    to: sendTo,
     text: emailContent.body,
     subject: emailContent.subject,
   };

@@ -20,7 +20,6 @@ export async function scrapedAndStoreProduct(productUrl: string) {
     console.log("This one is the existing one ", existingProduct);
 
     if (existingProduct) {
-      console.log(existingProduct.priceHistory);
       const updatedPriceHistory: any = [
         ...existingProduct.priceHistory,
         { price: scrapedProduct.currentPrice },
@@ -95,7 +94,7 @@ export async function getSimilarProducts(productId: String) {
 
 export async function addUserEmailToProduct(
   productId: String,
-  userEmail: String
+  userEmail: string
 ) {
   try {
     //send our first email
@@ -108,7 +107,7 @@ export async function addUserEmailToProduct(
       product.users.push({ email: userEmail });
       await product.save();
       const emailContent = await generateEmailBody(product, "WELCOME");
-      await sendEmail(emailContent, [userEmail]);
+      await sendEmail(emailContent, userEmail);
     }
   } catch (err) {
     console.log(err);
