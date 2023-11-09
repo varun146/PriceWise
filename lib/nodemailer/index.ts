@@ -85,8 +85,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   service: "gmail",
   auth: {
-    user: "varungarg63683@gmail.com",
-    pass: "qolh kayo rrhy upyv",
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
   },
 });
 export async function sendEmail(emailContent: EmailContent, sendTo: string) {
