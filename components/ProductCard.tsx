@@ -8,9 +8,13 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
+  const curr = "₹";
   return (
-    <Link href={`/products/${product._id}`} className="product-card">
-      <div className="product-card_img-container">
+    <Link
+      href={`/products/${product._id}`}
+      className="product-card border-8 border-gray-300 p-10 "
+    >
+      <div className="product-card_img-container ">
         <Image
           src={product.image}
           alt={product.title}
@@ -27,7 +31,7 @@ const ProductCard = ({ product }: Props) => {
             {product.category}
           </p>
           <p className="text-black text-lg font-semibold">
-            <span>{product?.currency}</span>
+            <span>{curr}</span>
             <span>{product?.currentPrice}</span>
           </p>
         </div>

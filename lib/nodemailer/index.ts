@@ -93,7 +93,7 @@ export async function sendEmail(emailContent: EmailContent, sendTo: string) {
   const mailOptions = {
     from: '"PriceWise" <varungarg63683@gmail.com>',
     to: sendTo,
-    text: emailContent.body,
+    html: emailContent.body,
     subject: emailContent.subject,
   };
   transporter.sendMail(mailOptions, (error: any, info: any) => {

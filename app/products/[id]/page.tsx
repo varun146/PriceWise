@@ -173,7 +173,11 @@ const ProductDetails = async ({ params: { id } }: Props) => {
             height={22}
           />
 
-          <Link href="/" className="text-base text-white">
+          <Link
+            href={product.url}
+            target="_blank"
+            className="text-base text-white"
+          >
             Buy Now
           </Link>
         </button>

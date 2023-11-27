@@ -130,7 +130,7 @@
   }
 
   .product-card_img-container {
-    @apply flex-1 relative flex flex-col gap-5 p-4 rounded-md;
+    @apply flex-1 relative flex flex-col gap-5 p-4 rounded-xl;
   }
 
   .product-card_img {
